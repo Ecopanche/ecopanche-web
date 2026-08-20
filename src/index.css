@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 40 35% 97%;
+    --foreground: 145 45% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 145 45% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 145 45% 15%;
+
+    --primary: 145 45% 35%;
+    --primary-foreground: 40 35% 97%;
+
+    --secondary: 25 40% 45%;
+    --secondary-foreground: 40 35% 97%;
+
+    --muted: 40 25% 90%;
+    --muted-foreground: 145 20% 45%;
+
+    --accent: 120 25% 50%;
+    --accent-foreground: 40 35% 97%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 40 35% 97%;
+
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 145 45% 35%;
+
+    --radius: 0.75rem;
+
+    /* EcoPanche custom tokens */
+    --forest-green: 145 45% 35%;
+    --sage-green: 120 25% 50%;
+    --earth-brown: 25 40% 45%;
+    --sand-beige: 40 35% 85%;
+    --warm-cream: 40 35% 97%;
+    
+    /* Gradients */
+    --gradient-nature: linear-gradient(135deg, hsl(145 45% 35%) 0%, hsl(120 25% 50%) 100%);
+    --gradient-earth: linear-gradient(135deg, hsl(25 40% 45%) 0%, hsl(40 35% 70%) 100%);
+    --gradient-hero: linear-gradient(180deg, rgba(145, 45%, 15%, 0.3) 0%, rgba(145, 45%, 35%, 0.7) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px rgba(145, 95, 77, 0.08);
+    --shadow-card: 0 8px 30px rgba(145, 95, 77, 0.12);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 145 45% 8%;
+    --foreground: 40 35% 95%;
+
+    --card: 145 35% 12%;
+    --card-foreground: 40 35% 95%;
+
+    --popover: 145 35% 12%;
+    --popover-foreground: 40 35% 95%;
+
+    --primary: 120 25% 50%;
+    --primary-foreground: 145 45% 8%;
+
+    --secondary: 25 40% 45%;
+    --secondary-foreground: 40 35% 95%;
+
+    --muted: 145 25% 20%;
+    --muted-foreground: 40 25% 70%;
+
+    --accent: 145 45% 35%;
+    --accent-foreground: 40 35% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 40 35% 95%;
+
+    --border: 145 25% 22%;
+    --input: 145 25% 22%;
+    --ring: 120 25% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 px-6 md:px-12;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .gradient-nature {
+    background: var(--gradient-nature);
+  }
+
+  .gradient-earth {
+    background: var(--gradient-earth);
+  }
+
+  .smooth-transition {
+    transition: var(--transition-smooth);
+  }
+}
